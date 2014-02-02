@@ -1,0 +1,16 @@
+Port 4837
+Compression delayed
+LogLevel INFO
+TCPKeepAlive yes
+LoginGraceTime 120
+Protocol 2
+MaxAuthTries 6
+MaxSessions 10
+Subsystem sftp internal-sftp -l ERROR
+
+# Catch All
+Match User *
+	AllowTcpForwarding no
+	MaxSessions 10
+	PasswordAuthentication no
+	PubkeyAuthentication yes
